@@ -92,7 +92,7 @@ void imprimeTerminal(Lista *l){
         cout << "\t";
         cout << n->desc;
         cout << "\t\t";
-        cout << n->rot;
+        cout << n->rot->nome;
         n = n->prox;
         if(n){
             cout << "\n";

@@ -225,13 +225,18 @@ void removerRoteador(string nome, Lista *roteadores, Lista *terminais){
         fflush(stdin);
     }while(!nomeCompostoVerify(nome));
 
-    if(checkRemocaoRoteador(terminais->inicio->rot, nome)){
+    No *busca = buscaRecursiva(roteadores->inicio, nome);
+    if(busca){
+        if(checkRemocaoRoteador(terminais->inicio->rot, nome)){
 
-        cout << "Há conexões no roteador.";
+            cout << "Há conexões no roteador.";
+        }else{
+
+            removeValor(roteadores, nome);
+            cout << "Roteador removido.";
+        }
     }else{
-
-        removeValor(roteadores, nome);
-        cout << "Roteador removido.";
+        cout << "Roteador não encontrado.";
     }
 }
 
@@ -243,8 +248,15 @@ void removerTerminal(string nome, Lista *terminais){
         fflush(stdin);
     }while(!nomeCompostoVerify(nome));
 
-    removeValor(terminais, nome);
-    cout << "Terminal removido.";
+    No *busca = buscaRecursiva(terminais->inicio, nome);
+    if(busca){
+
+        removeValor(terminais, nome);
+        cout << "Terminal removido.";
+    }else{
+
+        cout << "Terminal não encontrado.";
+    }
 }
 
 void conectarRoteadores(string nome, Lista *roteadores){
