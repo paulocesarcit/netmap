@@ -28,23 +28,21 @@ e localização do terminal(ex.: Vitória). O NetMap não aceita nomes compostos
 
 # As seguintes operações devem ser implementadas:
  CadastraRoteador(Roteador): Cadastra um novo roteador ao NetMap;
- CadastraTerminal(Terminal): Cadastra um novo terminal ao NetMap (já deve conectar o terminal a
-um roteador);
- RemoveRoteador(Roteador): Remover o roteador do NetMap (Note que todas as relações deste
-roteador com outros devem ser excluídas.);
- RemoveTerminal(Terminal): Remove o terminal do NetMap;
- ConectaRoteadores(Roteador1, Roteador2): Cria um enlace entre dois roteadores já cadastrados;
- DesconectaRoteadores(Roteador1, Roteador2): Remove o enlace entre dois roteadores já cadastrados;
- FrequenciaOperadora(operadora): Imprime o número de roteadores cadastrados de uma determinada
-operadora;
- EnviarPacotesDados(Terminal1, Terminal2): Verifica se é possível enviar dados, por exemplo do
-Terminal1 para o Terminal2. Retorna SIM se for possível e NAO caso contrário. Por exemplo,
-EnviarPacotesDados(Terminal1, Terminal5) retorna SIM para o exemplo da figura 1, e NAO para o
-exemplo da figura 3.
- MostrarTerminais(): mostrar todos os terminais e o roteador qu está conectado;
- MostrarRoteadores(): Mostrar roteadores e para cada roteador os enlaces que possui.
 
-Deve-se fazer testes de consistência se essas operações podem ser aplicadas (teste de pré-condições) e deve
-imprimir mensagens de sucesso ou falha (por exemplo, a chamada de função RemoveRoteador(Rot7) no exemplo acima
-deve gerar uma mensagem de erro pois não há Roteador7 cadastrado com esse nome. Além disso, procure escrever
-funções auxiliares que facilitem a implementação das operações acima, evitando a repetição desnecessária de código.
+ CadastraTerminal(Terminal): Cadastra um novo terminal ao NetMap (já deve conectar o terminal a um roteador);
+
+ RemoveRoteador(Roteador): Remover o roteador do NetMap (Note que todas as relações deste roteador com outros devem ser excluídas.);
+
+ RemoveTerminal(Terminal): Remove o terminal do NetMap;
+
+ ConectaRoteadores(Roteador1, Roteador2): Cria um enlace entre dois roteadores já cadastrados;
+
+ DesconectaRoteadores(Roteador1, Roteador2): Remove o enlace entre dois roteadores já cadastrados;
+
+ FrequenciaOperadora(operadora): Imprime o número de roteadores cadastrados de uma determinada operadora;
+
+ EnviarPacotesDados(Terminal1, Terminal2): Verifica se é possível enviar dados, por exemplo do Terminal1 para o Terminal2. Retorna SIM se for possível e NAO caso contrário;
+
+ MostrarTerminais(): mostrar todos os terminais e o roteador qu está conectado;
+
+ MostrarRoteadores(): Mostrar roteadores e para cada roteador os enlaces que possui.
